@@ -5,13 +5,17 @@ public class Fractions {
     private long d;
 
     public Fractions(long n, long d) {
-        this.n = n;
-        this.d = d;
-        long gcd = gcd(n, d);                        // GCD - největší společný dělitel
+        long gcd = Utils.gcd(n, d);                        // GCD - největší společný dělitel
+        this.n = n / gcd;
+        this.d = d / gcd;
     }
 
-    private static long gcd(long a, long b) {
-        return 1;
+    public static Fractions parse(String s) {
+        return new Fractions(1,1);
     }
 
+    //@Override
+    public String toString() { // vytvoříme logiku, jak se bude zlomek převádět na String
+        return d + "/" + n;
+    }
 }
