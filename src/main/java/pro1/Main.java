@@ -1,5 +1,6 @@
 package pro1;
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -17,6 +18,7 @@ public class Main {
             System.out.println("Ukázka: "+records[0].getName());                  //třída Math je statická (Math math = new Math(); nebude fungovat - nemůžu z toho udělat novou metodu)
 
         }
+
     }
     //path = cesta k souboru
     public static ExamRecord[] readInputFile(Path path) throws IOException {
@@ -32,4 +34,14 @@ public class Main {
         }
         return resultList.toArray(new ExamRecord[0]);   // musíme tam dát parametr protože bullshit
     }
+
+
+    // Domácí úkol
+
+    public static ExamRecord[] writeOutputFile(Path path) throws IOException {
+        FileWriter writer = new FileWriter(path.toFile());
+        String[] line = writer.write(Fractions.parse());
+        return null;
+    }
+
 }
