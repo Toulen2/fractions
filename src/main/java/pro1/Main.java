@@ -8,9 +8,6 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        System.out.println(new Fractions(1400,150));
-        System.out.println(new Fractions(52440,3620));
-        System.out.println(new Fractions(1300,1260));
         File inputDir = new File("C:/Users/HP/Documents/2. Semestr/PRO1/CODE/data-fractions/input");
         File[] inputFiles = inputDir.listFiles();
         for (File inputFile : inputFiles)                                           // : je foreach, iterátor, procházení (cyklus) - může se místo toho použít normální cykl for
