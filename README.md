@@ -1,0 +1,1 @@
+autor: Lukáš Matoulek
