@@ -2,6 +2,7 @@ package pro1;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
@@ -13,10 +14,18 @@ public class Main {
         File[] inputFiles = inputDir.listFiles();
         for (File inputFile : inputFiles)                                           // : je foreach, iterátor, procházení (cyklus) - může se místo toho použít normální cykl for
         {
-//            System.out.println("Reading "+inputFile);
+            System.out.println("Reading "+inputFile);
             ExamRecord[] records = readInputFile(inputFile.toPath());               //ExamRecord je třída stejně jako např. int
             System.out.println("Ukázka: "+records[0].getName());                  //třída Math je statická (Math math = new Math(); nebude fungovat - nemůžu z toho udělat novou metodu)
+            System.out.println("Score: "+records[0].getScore());
 
+
+            File outputFile = new File("C:/Users/HP/Documents/2. Semestr/PRO1/CODE/data-fractions/output/" + inputFile.getName()); // najde, kde má soubory uložit + zistí jméno souboru
+            PrintWriter writer = new PrintWriter(outputFile);     // uloží soubory
+            for (int i = 0; i < records.length; i++) {
+                writer.println(records[i].getName() + ", " + records[i].getScore()); // tohle ten soubor vytvoří
+            }
+            writer.close(); // musí tady být, jak by se tam psalo pořád a pak se vytvoří pouze prázdné soubory
         }
 
     }
@@ -38,10 +47,11 @@ public class Main {
 
     // Domácí úkol
 
-    public static ExamRecord[] writeOutputFile(Path path) throws IOException {
-        FileWriter writer = new FileWriter(path.toFile());
-        String[] line = writer.write(Fractions.parse());
-        return null;
-    }
+//    public static ExamRecord[] writeOutputFile(Path path) throws IOException {
+//        File outputFile = new File("C:/Users/HP/Documents/2. Semestr/PRO1/CODE/data-fractions/output"); // najde, kde má soubory uložit
+//        PrintWriter writer = new PrintWriter(outputFile);     // uloží soubory
+//        writer.println(readInputFile(path).toString());
+//        return null;
+//    }
 
 }
