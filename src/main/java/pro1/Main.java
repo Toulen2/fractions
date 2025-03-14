@@ -1,6 +1,5 @@
 package pro1;
 import java.io.File;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.nio.file.Files;
@@ -22,8 +21,8 @@ public class Main {
             // domácí úkol
             File outputFile = new File("C:/Users/HP/Documents/2. Semestr/PRO1/CODE/data-fractions/output/" + inputFile.getName()); // najde, kde má soubory uložit + zistí jméno souboru
             PrintWriter writer = new PrintWriter(outputFile);     // uloží soubory
-            for (int i = 0; i < records.length; i++) {
-                writer.println(records[i].getName() + ", " + records[i].getScore()); // tohle ten soubor vytvoří
+            for (ExamRecord record : records) {
+                writer.println(record.getName() + ", " + record.getScore()); // tohle ten soubor vytvoří
             }
             writer.close(); // musí tady být, jak by se tam psalo pořád a pak se vytvoří pouze prázdné soubory
         }
