@@ -19,7 +19,7 @@ public class Main {
             System.out.println("Ukázka: "+records[0].getName());                  //třída Math je statická (Math math = new Math(); nebude fungovat - nemůžu z toho udělat novou metodu)
             System.out.println("Score: "+records[0].getScore());
 
-
+            // domácí úkol
             File outputFile = new File("C:/Users/HP/Documents/2. Semestr/PRO1/CODE/data-fractions/output/" + inputFile.getName()); // najde, kde má soubory uložit + zistí jméno souboru
             PrintWriter writer = new PrintWriter(outputFile);     // uloží soubory
             for (int i = 0; i < records.length; i++) {
